@@ -54,7 +54,7 @@ class LayoutListItem extends Component {
     return (
       <span
         className={layoutClass}
-        onClick={() => that.setSelectedLayout(layout)}
+        onClick={() => that.setSelectedLayout && that.setSelectedLayout(layout)}
       >
         <GridLayout
           layout={layout.layout}
