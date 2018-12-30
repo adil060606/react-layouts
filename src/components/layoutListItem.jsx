@@ -14,13 +14,12 @@ class LayoutListItem extends Component {
   }
 
   generateDOM() {
-    const that = this;
     return this.props.layout.layout.map((layoutItem, nLayoutItem) => {
       return (
         <div
           key={nLayoutItem}
-          onDrop={that.drop.bind(that, nLayoutItem)}
-          onDragOver={that.allowDrop}
+          onDrop={this.drop.bind(this, nLayoutItem)}
+          onDragOver={this.allowDrop.bind(this)}
         >
           {layoutItem.componentUrl && (
             <img src={layoutItem.componentUrl} alt="" />
@@ -50,11 +49,10 @@ class LayoutListItem extends Component {
     const layoutClass = `layout-card ${
       layout.isSelected ? "selected-layout-card" : ""
     }`;
-    const that = this;
     return (
       <span
         className={layoutClass}
-        onClick={() => that.setSelectedLayout && that.setSelectedLayout(layout)}
+        onClick={() => this.setSelectedLayout && this.setSelectedLayout(layout)}
       >
         <GridLayout
           layout={layout.layout}
