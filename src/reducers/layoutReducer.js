@@ -12,7 +12,9 @@ export default function layoutReducer(
     case UPDATE_LAYOUT: {
       // payload: {nLayoutItem:  componenet:   }
       // Having a selected layout, sets its nLayoutItem to contain the given component
-      const newLayouts = state.map(layout => updateObject(layout, {}));
+      const newLayouts = state.map(layout =>
+        cloneObjectWithNewValues(layout, {})
+      );
 
       const selectedLayout = getSelectedLayout(newLayouts);
       if (selectedLayout) {
@@ -25,7 +27,9 @@ export default function layoutReducer(
       // payload: {layoutId: }
       // sets the layouts with appropriate isSelected attribute
       const newLayouts = state.map(layout =>
-        updateObject(layout, { isSelected: layout.id === payload.layoutId })
+        cloneObjectWithNewValues(layout, {
+          isSelected: layout.id === payload.layoutId
+        })
       );
       return newLayouts;
     }
@@ -40,8 +44,8 @@ function getSelectedLayout(layouts) {
   return (selectedLayout.length && selectedLayout[0]) || undefined;
 }
 
-function updateObject(object, newValues) {
-  return Object.assign({}, object, newValues);
+function cloneObjectWithNewValues(object, newValues) {
+  return { ...object, ...newValues }; //Object.assign({}, object, newValues);
 }
 
 function getInitialLayouts() {
