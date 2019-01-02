@@ -3,7 +3,7 @@ import GridLayout from "react-grid-layout";
 
 class LayoutListItem extends Component {
   static defaultProps = {
-    rowHeight: 30
+    //rowHeight: 30
   };
 
   constructor(props) {
@@ -52,14 +52,19 @@ class LayoutListItem extends Component {
     return (
       <span
         className={layoutClass}
+        style={{
+          height: this.props.updateLayout ? "400px" : "200px",
+          width: this.props.updateLayout ? "70%" : "30%",
+          minWidth: this.props.updateLayout ? "670px" : "380px"
+        }}
         onClick={() => this.setSelectedLayout && this.setSelectedLayout(layout)}
       >
         <GridLayout
           layout={layout.layout}
           className="layout"
-          rowHeight={30}
-          width={400}
-          height={100}
+          rowHeight={!this.props.updateLayout ? 80 : 160}
+          width={!this.props.updateLayout ? 400 : 800}
+          // height={200}
         >
           {this.generateDOM()}
         </GridLayout>
