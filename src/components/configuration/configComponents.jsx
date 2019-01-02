@@ -10,8 +10,10 @@ class ConfigComponents extends Component {
 
   render() {
     return (
-      <div>
-        <h4>components</h4>
+      <div className="h100">
+        <div className="title-div component-title-div">
+          <h4 className="components-title">components</h4>
+        </div>
         {this.components.map(component => this.generateOneComponent(component))}
       </div>
     );
@@ -19,15 +21,14 @@ class ConfigComponents extends Component {
 
   generateOneComponent(component) {
     return (
-      <div key={component.id}>
-        <img
-          draggable={true}
-          onDragStart={e => this.drag(e, component)}
-          className="image-component"
-          src={component.url}
-          alt=""
-        />
-      </div>
+      <img
+        key={component.id}
+        draggable={true}
+        onDragStart={e => this.drag(e, component)}
+        className="image-component"
+        src={component.url}
+        alt=""
+      />
     );
   }
 
