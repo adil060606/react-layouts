@@ -1,6 +1,9 @@
-body,
-html {
-  height: 100%;
+/* * {
+  border: 1px solid blue;
+} */
+
+* {
+  box-sizing: content-box;
 }
 
 .App {
@@ -135,6 +138,12 @@ li b {
   background-color: #ddd;
 }
 
+html,
+body,
+.h100 {
+  height: 100%;
+}
+
 .navbar {
   display: block !important;
   min-width: 520px;
@@ -142,11 +151,10 @@ li b {
 
 .layout-card {
   display: inline-block;
-  width: 30%;
-  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
   margin: 1%;
   border: 3px solid gray;
-  width: 345px;
 }
 
 .layout-card img {
@@ -163,15 +171,45 @@ li b {
 }
 
 .image-component {
-  margin: 1%;
+  margin: 2%;
   border: 3px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 .config-left-panel {
   float: left;
-  width: 30%;
+  width: 20%;
+  border-right: 2px solid #e9ecef;
+  padding: 2%;
+  min-width: 154px;
 }
 
 .config-right-panel {
   float: left;
-  width: 70%;
+  width: 80%;
+  padding: 2%;
+  min-width: 745px;
+}
+
+.layouts-screen {
+  margin: 2%;
+}
+
+.title-div {
+  position: relative;
+}
+
+.component-title-div {
+  padding-top: 12px;
+}
+
+.components-title:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: #e9ecef;
+  position: absolute;
+  bottom: -4px;
+  left: 0px;
 }
