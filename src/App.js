@@ -12,11 +12,11 @@ import Configuration from "./components/configuration/configuration";
 class App extends Component {
   render() {
     return (
-      <div>
-        <BrowserRouter>
-          <div>
+      <div className="h100">
+        <BrowserRouter className="h100">
+          <div className="h100">
             <TopPanel />
-            <Switch>
+            <Switch className="h100">
               <Route path="/list" component={LayoutList} />
               <Route path="/configure" component={Configuration} />
               <Route render={() => <Redirect to="/list" />} />
