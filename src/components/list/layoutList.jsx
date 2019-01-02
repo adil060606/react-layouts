@@ -4,9 +4,11 @@ import { setSelectedLayout } from "../../actions/layoutActions";
 import { connect } from "react-redux";
 
 const LayoutList = ({ layouts, updateLayout, setSelectedLayout }) => (
-  <div>
+  <div className="h100 layouts-screen">
+    <div className="title-div">
+      <h2 className="components-title">Layouts Screen</h2>
+    </div>
     <center>
-      <h2>Layouts Screen</h2>
       {layouts.map(layout => (
         <LayoutListItem
           key={layout.id}
