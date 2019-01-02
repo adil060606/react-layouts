@@ -13,7 +13,7 @@ function getInitialComponents() {
   const components = _.range(nComponents).map(i => {
     return {
       id: i,
-      url: `https://picsum.photos/50?image=${i * 102}`
+      url: `https://picsum.photos/120?image=${i * 102}`
     };
   });
 
