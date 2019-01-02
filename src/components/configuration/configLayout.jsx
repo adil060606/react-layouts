@@ -5,8 +5,10 @@ import { connect } from "react-redux";
 
 const ConfigLayout = ({ layout, updateLayout }) => (
   <div>
+    <div className="title-div">
+      <h2 className="components-title">Configuration Screen</h2>
+    </div>
     <center>
-      <h2>Configuration Screen</h2>
       {layout && <LayoutListItem layout={layout} updateLayout={updateLayout} />}
       {!layout && (
         <div>
