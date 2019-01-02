@@ -7,11 +7,11 @@ class Configuration extends Component {
 
   render() {
     return (
-      <span>
-        <div className="config-left-panel">
+      <span className="h100">
+        <div className="config-left-panel h100">
           <ConfigComponents />
         </div>
-        <div className="config-right-panel">
+        <div className="config-right-panel h100">
           <ConfigLayout />
         </div>
       </span>
